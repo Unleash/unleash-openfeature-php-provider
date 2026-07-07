@@ -1,0 +1,49 @@
+{
+  "name": "unleash/openfeature-provider",
+  "description": "The official Unleash OpenFeature provider for PHP.",
+  "type": "library",
+  "license": "Apache-2.0",
+  "authors": [
+    {
+      "name": "Unleash",
+      "email": "opensource@getunleash.io"
+    }
+  ],
+  "require": {
+    "php": "^8.4",
+    "ext-json": "*",
+    "open-feature/sdk": "^2.2",
+    "unleash/client": "^2.9",
+    "nyholm/psr7": "^1.8",
+    "symfony/cache": "^7.0",
+    "symfony/http-client": "^7.0"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^3.0",
+    "phpstan/phpstan": "^2.0",
+    "phpunit/phpunit": "^12.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Unleash\\OpenFeature\\Provider\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Unleash\\OpenFeature\\Provider\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "phpunit",
+    "lint": "phpstan analyse src tests --level=max",
+    "format": "php-cs-fixer fix --dry-run --diff",
+    "format:fix": "php-cs-fixer fix",
+    "build": "composer validate --strict"
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "php-http/discovery": true
+    }
+  }
+}
