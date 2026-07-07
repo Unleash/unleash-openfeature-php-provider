@@ -22,7 +22,6 @@ final class FakeUnleash implements Unleash
     private array $variants = [];
 
     public ?Context $lastContext = null;
-    public int $registerCalls = 0;
 
     public function setFlag(string $featureName, bool $enabled): void
     {
@@ -50,8 +49,6 @@ final class FakeUnleash implements Unleash
 
     public function register(): bool
     {
-        ++$this->registerCalls;
-
         return true;
     }
 }

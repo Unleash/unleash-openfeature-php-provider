@@ -29,11 +29,6 @@ final class UnleashFlagProvider extends AbstractProvider
         $this->setLogger($logger ?? new NullLogger());
     }
 
-    public function initialize(): bool
-    {
-        return $this->client->register();
-    }
-
     public function resolveBooleanValue(
         string $flagKey,
         bool $defaultValue,

@@ -23,12 +23,6 @@ final class UnleashFlagProviderTest extends TestCase
         $this->provider = new UnleashFlagProvider($this->client);
     }
 
-    public function testInitializesUnleashClient(): void
-    {
-        self::assertTrue($this->provider->initialize());
-        self::assertSame(1, $this->client->registerCalls);
-    }
-
     public function testResolvesBooleanFlagsThroughUnleash(): void
     {
         $this->client->setFlag('enabled', true);
