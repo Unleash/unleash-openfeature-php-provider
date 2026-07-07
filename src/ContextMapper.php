@@ -104,6 +104,6 @@ final class ContextMapper
             return DateTimeImmutable::createFromInterface($value);
         }
 
-        return self::stringify($value);
+        return null;
     }
 }

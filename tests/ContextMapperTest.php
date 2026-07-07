@@ -57,6 +57,17 @@ final class ContextMapperTest extends TestCase
         self::assertFalse($context->hasCustomProperty('nullValue'));
     }
 
+    public function testDiscardsCurrentTimeWhenItIsNotADateOrString(): void
+    {
+        $context = ContextMapper::toUnleashContext(
+            new EvaluationContext(null, new Attributes(['currentTime' => 123])),
+            new NullLogger(),
+        );
+
+        self::assertNotNull($context);
+        self::assertFalse($context->hasCustomProperty('currentTime'));
+    }
+
     public function testReturnsNullForMissingContext(): void
     {
         self::assertNull(ContextMapper::toUnleashContext(null, new NullLogger()));
