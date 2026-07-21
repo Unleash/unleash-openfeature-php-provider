@@ -29,7 +29,9 @@ final class UnleashFlagProvider extends AbstractProvider
         UnleashBuilder $builder,
         ?LoggerInterface $logger = null,
     ) {
-        $this->client = $builder->build();
+        $this->client = $builder
+            ->withSdkFlavour('unleash-openfeature-php-provider', Version::VERSION)
+            ->build();
         $this->setLogger($logger ?? new NullLogger());
     }
 
