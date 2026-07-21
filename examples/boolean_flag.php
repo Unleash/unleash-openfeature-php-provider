@@ -19,16 +19,15 @@ foreach (['url', 'api-key', 'flag-key'] as $requiredOption) {
     }
 }
 
-$unleash = UnleashBuilder::create()
+$builder = UnleashBuilder::create()
     ->withAppUrl($options['url'])
     ->withInstanceId($options['api-key'])
     ->withAppName('openfeature-php-example')
     ->withHeader('Authorization', $options['api-key'])
-    ->withMetricsEnabled(false)
-    ->build();
+    ->withMetricsEnabled(false);
 
 $api = OpenFeatureAPI::getInstance();
-$api->setProvider(new UnleashFlagProvider($unleash));
+$api->setProvider(new UnleashFlagProvider($builder));
 
 $client = $api->getClient('example');
 $context = new EvaluationContext(

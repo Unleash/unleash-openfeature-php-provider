@@ -17,15 +17,19 @@ use Psr\Log\NullLogger;
 use Unleash\Client\DTO\Variant;
 use Unleash\Client\Enum\VariantPayloadType;
 use Unleash\Client\Unleash;
+use Unleash\Client\UnleashBuilder;
 
 final class UnleashFlagProvider extends AbstractProvider
 {
     protected static string $NAME = 'UnleashFlagProvider';
 
+    private readonly Unleash $client;
+
     public function __construct(
-        private readonly Unleash $client,
+        UnleashBuilder $builder,
         ?LoggerInterface $logger = null,
     ) {
+        $this->client = $builder->build();
         $this->setLogger($logger ?? new NullLogger());
     }
 
