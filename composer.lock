@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0011e0c7f1f68b4b9bbe8d96acb1769e",
+    "content-hash": "e21e36dca6827b7fd18a0e44fcb3add7",
     "packages": [
         {
             "name": "lastguest/murmurhash",
@@ -1712,16 +1712,16 @@
         },
         {
             "name": "unleash/client",
-            "version": "v2.9.284",
+            "version": "v2.10.084",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Unleash/unleash-php-sdk.git",
-                "reference": "310da6dde2dc24760166b47920eae710fcd1dd81"
+                "reference": "ed29186527a16f3eaaa9b4fa01aae6dcf4d7d272"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Unleash/unleash-php-sdk/zipball/310da6dde2dc24760166b47920eae710fcd1dd81",
-                "reference": "310da6dde2dc24760166b47920eae710fcd1dd81",
+                "url": "https://api.github.com/repos/Unleash/unleash-php-sdk/zipball/ed29186527a16f3eaaa9b4fa01aae6dcf4d7d272",
+                "reference": "ed29186527a16f3eaaa9b4fa01aae6dcf4d7d272",
                 "shasum": ""
             },
             "require": {
@@ -1775,9 +1775,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Unleash/unleash-php-sdk/issues",
-                "source": "https://github.com/Unleash/unleash-php-sdk/tree/v2.9.284"
+                "source": "https://github.com/Unleash/unleash-php-sdk/tree/v2.10.084"
             },
-            "time": "2026-01-12T10:27:57+00:00"
+            "time": "2026-07-21T07:51:27+00:00"
         }
     ],
     "packages-dev": [
