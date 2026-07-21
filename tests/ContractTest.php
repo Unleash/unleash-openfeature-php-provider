@@ -46,7 +46,7 @@ final class ContractTest extends TestCase
         $features = file_get_contents(__DIR__ . '/../verifier/spec/fixtures/unleash-features.json');
         self::assertIsString($features);
 
-        $unleash = UnleashBuilder::create()
+        $builder = UnleashBuilder::create()
             ->withAppUrl('http://unleash-bootstrap.invalid/api')
             ->withInstanceId('verifier-not-a-real-token')
             ->withAppName('openfeature-php-verifier')
@@ -57,10 +57,9 @@ final class ContractTest extends TestCase
             ->withAutomaticRegistrationEnabled(false)
             ->withMetricsEnabled(false)
             ->withFetchingEnabled(false)
-            ->withBootstrap($features)
-            ->build();
+            ->withBootstrap($features);
 
-        self::$provider = new UnleashFlagProvider($unleash, new NullLogger());
+        self::$provider = new UnleashFlagProvider($builder, new NullLogger());
         OpenFeatureAPI::getInstance()->setProvider(self::$provider);
     }
 

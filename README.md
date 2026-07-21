@@ -19,6 +19,22 @@ For local development:
 composer install
 ```
 
+## Usage
+
+```php
+use OpenFeature\OpenFeatureAPI;
+use Unleash\Client\UnleashBuilder;
+use Unleash\OpenFeature\Provider\UnleashFlagProvider;
+
+$builder = UnleashBuilder::create()
+    ->withAppUrl('https://app.unleash-hosted.com/demo/api')
+    ->withInstanceId('default:development.example-token')
+    ->withAppName('my-php-app')
+    ->withHeader('Authorization', 'default:development.example-token');
+
+OpenFeatureAPI::getInstance()->setProvider(new UnleashFlagProvider($builder));
+```
+
 If you cloned without submodules, initialize the verifier harness:
 
 ```bash
